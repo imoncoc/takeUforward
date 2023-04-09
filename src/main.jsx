@@ -25,11 +25,11 @@ const router = createBrowserRouter([
         element: <Statistics></Statistics>,
       },
       {
-        path: "/jobs",
+        path: "/applied-jobs",
         element: <Jobs></Jobs>,
       },
       {
-        path: "/blog",
+        path: "/blogs",
         element: <Blog></Blog>,
       },
     ],

@@ -38,7 +38,7 @@ const Header = () => {
                 DreamJob
               </span>
             </Link>
-            <ul className="items-center hidden space-x-8 lg:flex">
+            <ul className="items-center  hidden space-x-8 lg:flex">
               <li>
                 <NavLink
                   to="/"
@@ -64,10 +64,10 @@ const Header = () => {
                 </NavLink>
               </li>
               <li>
-              <NavLink
-                  to="/jobs"
-                  aria-label="jobs"
-                  title="jobs"
+                <NavLink
+                  to="/applied-jobs"
+                  aria-label="Applied Jobs"
+                  title="Applied Jobs"
                   className={({ isActive }) =>
                     isActive ? "active" : "default"
                   }
@@ -76,7 +76,7 @@ const Header = () => {
                 </NavLink>
               </li>
               <li>
-              <NavLink
+                <NavLink
                   to="/blogs"
                   aria-label="blogs"
                   title="blogs"
@@ -87,14 +87,13 @@ const Header = () => {
                   Blogs
                 </NavLink>
               </li>
-              <li>
-                <Link to="/cart" aria-label="Cart" title="Cart">
-                  <div className="relative py-3">
-                    <ShoppingCartIcon className="h-6 w-6 text-cyan-400" />
-                  </div>
-                </Link>
-              </li>
+              
             </ul>
+            <div>
+              <button className="btn-primary hidden lg:flex">
+                Start Applying
+              </button>
+            </div>
 
             <div className="lg:hidden">
               <button
@@ -177,35 +176,38 @@ const Header = () => {
                       <ul className="space-y-4">
                         <li>
                           <Link
-                            to="/shop"
-                            aria-label="Shop"
-                            title="Shop"
+                            to="/statistics"
+                            aria-label="Statistics"
+                            title="Statistics"
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
-                            Shop
+                            Statistics
                           </Link>
                         </li>
                         <li>
                           <Link
-                            to="/cart"
-                            aria-label="Cart"
-                            title="Cart"
+                            to="/applied-jobs"
+                            aria-label="Applied Jobs"
+                            title="Applied Jobs"
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
-                            <div className="relative py-3">
-                              <ShoppingCartIcon className="h-6 w-6 text-cyan-400" />
-                            </div>
+                            Applied Job
                           </Link>
                         </li>
                         <li>
                           <Link
-                            to="/about"
-                            aria-label="About Us"
-                            title="About Us"
+                            to="/blogs"
+                            aria-label="Blogs"
+                            title="Blogs"
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
-                            About Us
+                            Blogs{" "}
                           </Link>
+                        </li>
+                        <li>
+                          <button className="btn-primary  lg:flex">
+                            Start Applying
+                          </button>
                         </li>
                       </ul>
                     </nav>

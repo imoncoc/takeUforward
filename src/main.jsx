@@ -5,17 +5,34 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { BeakerIcon } from "@heroicons/react/24/solid";
 import { Toaster } from "react-hot-toast";
+import Home from './components/Home/Home';
+import Statistics from './components/Statistics/Statistics';
+import Blog from './components/Blog/Blog';
+import Jobs from './components/Jobs/Jobs';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div className="text-2xl underline text-gray-800 font-sans">
-        Hello world!
-        <BeakerIcon className="h-6 w-6 text-blue-500" />
-      </div>
-    ),
+    element: <App></App>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/statistics",
+        element: <Statistics></Statistics>,
+      },
+      {
+        path: "/jobs",
+        element: <Jobs></Jobs>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+    ],
   },
 ]);
 

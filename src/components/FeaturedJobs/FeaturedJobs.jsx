@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import FeaturedJobSingleData from '../FeaturedJobSingleData/FeaturedJobSingleData';
 
 const FeaturedJobs = () => {
+  const [featuredJobs, setFeaturedJobs ] = useState([]);
+
+  useEffect(() => {
+    fetch("jobs.json")
+      .then((res) => res.json())
+      .then((data) => setFeaturedJobs(data));
+  }, []);
+
+  console.log(featuredJobs);
+
+
+
+
     return (
       <div className="my-5">
         <div className="take-section-div w-50 text-center">
@@ -9,6 +24,22 @@ const FeaturedJobs = () => {
             Explore thousands of job opportunities with all the information you
             need. Its your future
           </p>
+        </div>
+
+        <div className="container">
+          <div className="row">
+            {featuredJobs &&
+              featuredJobs.map((feature) => (
+                <FeaturedJobSingleData
+                  key={feature.id}
+                  feature={feature}
+                ></FeaturedJobSingleData>
+              ))}
+          </div>
+        </div>
+
+        <div className='text-center my-5'> 
+          <button className="dream-btn-primary">See All Jobs</button>
         </div>
       </div>
     );

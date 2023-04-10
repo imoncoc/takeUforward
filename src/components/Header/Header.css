@@ -1,0 +1,17 @@
+.dream-nav-logo{
+    font-size: 2rem !important;
+    font-weight: 800;
+    color: #1A1919;
+}
+
+.dream-nav-icon-div{
+    background-color: #7E90FE;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.dream-nav-icon{
+    width: 20px;
+    margin-right: 10px;
+}
+

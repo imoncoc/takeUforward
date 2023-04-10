@@ -1,0 +1,30 @@
+*{
+    font-family: 'Manrope', sans-serif;
+}
+
+
+.active {
+    font-weight: 700;
+    background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+}
+
+.default{
+    font-weight: 500;
+    color: #757575;
+}
+
+.dream-btn-primary{
+    background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
+        border-radius: 8px;
+        padding: 13px 22px;
+        color: white;
+        border: 0;
+        transition: all 0.3s;
+}
+.dream-btn-primary:hover{
+    scale: 1.05;
+}

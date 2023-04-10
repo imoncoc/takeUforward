@@ -10,6 +10,7 @@ import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import Jobs from './components/Jobs/Jobs';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import FeaturedJobDetails from './components/FeaturedJobDetails/FeaturedJobDetails';
 
 
 const router = createBrowserRouter([
@@ -23,15 +24,27 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/statistics",
+        path: "statistics",
         element: <Statistics></Statistics>,
       },
       {
-        path: "/applied-jobs",
-        element: <Jobs></Jobs>
+        path: "applied-jobs",
+        element: <Jobs></Jobs>,
       },
       {
-        path: "/blog",
+        path: "detail/:id",
+        element: <FeaturedJobDetails></FeaturedJobDetails>,
+        loader: async ({ params }) => {
+          const res = await fetch(
+            "https://raw.githubusercontent.com/imoncoc/fake-data/main/jobs.json"
+          );
+          const data = await res.json();
+          const singleData = data?.find((data) => data.id === params.id);
+          return singleData;
+        },
+      },
+      {
+        path: "blog",
         element: <Blog></Blog>,
       },
     ],

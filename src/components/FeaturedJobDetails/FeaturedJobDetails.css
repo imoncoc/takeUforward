@@ -1,0 +1,26 @@
+.take-job-details{
+    background: linear-gradient(90deg, rgba(126, 144, 254, 0.1) 0%, rgba(152, 115, 255, 0.1) 100%);
+        border-radius: 8px;
+        padding: 1rem;
+}
+
+.take-job-details-title{
+    font-weight: 800;
+        font-size: 20px;
+        color: #1A1919;
+}
+
+.take-job-details-divider{
+    border: 1px solid #7E90FE;
+    opacity: 0.3;
+}
+.take-job-details-title-title{
+    color: #474747;
+    font-size: 18px;
+    font-weight: 700;
+}
+.take-job-details-icon{
+    width: 1.5rem;
+    margin-right: 5px;
+    color: #7E90FE;
+}

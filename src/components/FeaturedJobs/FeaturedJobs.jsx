@@ -4,14 +4,22 @@ import FeaturedJobSingleData from '../FeaturedJobSingleData/FeaturedJobSingleDat
 
 const FeaturedJobs = () => {
   const [featuredJobs, setFeaturedJobs ] = useState([]);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     fetch("jobs.json")
       .then((res) => res.json())
-      .then((data) => setFeaturedJobs(data));
+      .then((data) => {
+        setFeaturedJobs(data);
+      })
+      .catch(err => console.log(err));
   }, []);
 
-  console.log(featuredJobs);
+
+  const handleAllData = () =>{
+    setShowAll(true);
+  }
+
 
 
 
@@ -28,8 +36,9 @@ const FeaturedJobs = () => {
 
         <div className="container">
           <div className="row">
-            {featuredJobs &&
-              featuredJobs.map((feature) => (
+            {featuredJobs
+              ?.slice(0, showAll ? featuredJobs.length : 4)
+              .map((feature) => (
                 <FeaturedJobSingleData
                   key={feature.id}
                   feature={feature}
@@ -38,9 +47,13 @@ const FeaturedJobs = () => {
           </div>
         </div>
 
-        <div className='text-center my-5'> 
-          <button className="dream-btn-primary">See All Jobs</button>
-        </div>
+        {!showAll && (
+          <div className="text-center my-5">
+            <button onClick={handleAllData} className="dream-btn-primary">
+              See All Jobs
+            </button>
+          </div>
+        )}
       </div>
     );
 };

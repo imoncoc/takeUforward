@@ -1,11 +1,13 @@
 import React from 'react';
 import './FeaturedJobSingleData.css'
 import { MapPinIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import { Link } from 'react-router-dom';
 
 const FeaturedJobSingleData = ({feature}) => {
     const {address, companyLogo, companyName, contactNumber, description, educationalRequirements, employmentType
-, gmail, id, jobRequirements, jobStatus, jobTitle, responsibility, salary} = feature
-    console.log(feature)
+, gmail, id, jobRequirements, jobStatus, jobTitle, responsibility, salary} = feature;
+
+
     return (
       <div className="col-10 col-md-6 mx-auto feature-single-data-div m-3">
         <img className="mb-4" src={companyLogo} alt="" />
@@ -35,7 +37,9 @@ const FeaturedJobSingleData = ({feature}) => {
           </p>
         </div>
 
-        <button className="dream-btn-primary">View Details</button>
+        <Link to={`detail/${id}`}>
+          <button className="dream-btn-primary">View Details</button>
+        </Link>
       </div>
     );
 };

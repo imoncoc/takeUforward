@@ -60,6 +60,20 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          <div className="footer-divider"></div>
+
+          <div className="col-10 col-md-6 mx-auto  footer-description w-100  d-md-flex justify-content-md-between py-5">
+            <p className="text-center">
+              @{new Date().getFullYear()} Take<span className="active">U</span>
+              forward. All Rights Reserved to{" "}
+              <span className="active">Md Imon Hossain.</span>
+            </p>
+            <p className="text-center">
+              Powered by Take<span className="active">U</span>
+              forward.
+            </p>
+          </div>
         </div>
       </div>
     );

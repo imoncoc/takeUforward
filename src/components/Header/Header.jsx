@@ -82,7 +82,7 @@ const Header = () => {
               </ul>
 
               <button className="dream-btn-primary" type="submit">
-                Search
+                Start Applying
               </button>
             </div>
           </div>

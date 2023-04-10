@@ -1,0 +1,23 @@
+[
+  {
+    "image": "https://i.ibb.co/sW2Pns8/accounts-1.png",
+    "job-title": "Marketing Manager",
+    "available-jobs": 120
+  },
+  {
+    "image": "https://i.ibb.co/nQd4SwP/business-1.png",
+    "job-title": "Graphic Designer",
+    "available-jobs": 300
+  },
+  {
+    "image": "https://example.com/image1.jpg",
+    "job-title": "Software Developer",
+    "available-jobs": 200
+  },
+
+  {
+    "image": "https://i.ibb.co/D9dNbF0/chip-1.png",
+    "job-title": "Data Analyst",
+    "available-jobs": 80
+  }
+]

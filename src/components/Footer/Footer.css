@@ -6,3 +6,6 @@
 .footer-description{
     color: rgba(255, 255, 255, 0.7);
 }
+.footer-divider{
+    border: 1px solid #7E90FE;
+}

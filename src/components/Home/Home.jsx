@@ -5,14 +5,14 @@ import './Home.css'
 
 const Home = () => {
     return (
-      <div className="container">
+      <div className="container mb-5">
         <div className="row d-flex flex-row-reverse">
           <div className="col-10 col-md-6 mx-auto">
             <img className="img-fluid" src={menImg} alt="" />
           </div>
           <div
             className="col-10 col-md-6 mx-auto 
-          align-self-center pe-5"
+          align-self-center pe-5 text-center text-md-start"
           >
             <div className="mt-5">
               <h2 className="dream-home-title fs-1 fw-bolder">

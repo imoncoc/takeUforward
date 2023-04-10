@@ -7,6 +7,8 @@ import Header from './components/Header/Header'
 import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer/Footer'
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function App() {
   const [count, setCount] = useState(0)

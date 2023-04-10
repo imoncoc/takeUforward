@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import menImg  from '../../assets/allImg/men.png'
 import './Home.css'
 import JobCategory from '../JobCategory/JobCategory';
+import FeaturedJobs from '../FeaturedJobs/FeaturedJobs';
 
 const Home = () => {
     return (
@@ -32,6 +33,7 @@ const Home = () => {
           </div>
         </div>
         <JobCategory></JobCategory>
+        <FeaturedJobs></FeaturedJobs>
       </>
     );
 };

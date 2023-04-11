@@ -41,15 +41,28 @@ const Jobs = () => {
         </div>
 
         <div className="container">
-            <div className="row">
-                <div className="col-10 col-sm-12 mx-auto text-end">
-                    <button>Filter</button>
-                </div>
-                {
-                    data &&
-                    data.map((dataDetails)=><AppliedJobsDetails key={dataDetails.id} dataDetails={dataDetails}></AppliedJobsDetails>)
-                }
+          <div className="row">
+            <div className="col-10 col-sm-12 mx-auto text-end d-flex justify-content-between">
+              <div></div>
+              <div className="" style={{ width: "10rem" }}>
+                <select
+                  class="form-select form-select-lg mb-3"
+                  aria-label=".form-select-lg example"
+                >
+                  <option selected>Filter By</option>
+                  <option value="onsite">Onsite</option>
+                  <option value="remote">Remote</option>
+                </select>
+              </div>
             </div>
+            {data &&
+              data.map((dataDetails) => (
+                <AppliedJobsDetails
+                  key={dataDetails.id}
+                  dataDetails={dataDetails}
+                ></AppliedJobsDetails>
+              ))}
+          </div>
         </div>
       </>
     );

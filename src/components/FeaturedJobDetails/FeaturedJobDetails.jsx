@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import vector1 from '../../assets/allImg/Vector-1.png' 
 import vector2 from '../../assets/allImg/Vector.png' 
 import { MapPinIcon, CurrencyDollarIcon, BriefcaseIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import { addToDb } from '../../utilities/fakeDB';
 
 const FeaturedJobDetails = () => {
     const singleData = useLoaderData();
@@ -133,7 +134,12 @@ const FeaturedJobDetails = () => {
                 </div>
               </div>
 
-              <button className="dream-btn-primary w-100 my-3">Apply Now</button>
+              <button
+                onClick={() => addToDb(singleData)}
+                className="dream-btn-primary w-100 my-3"
+              >
+                Apply Now
+              </button>
             </div>
           </div>
         </div>

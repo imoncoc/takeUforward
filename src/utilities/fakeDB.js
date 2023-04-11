@@ -1,0 +1,41 @@
+
+const addToDb = (cart)=>{
+    console.log(cart)
+    let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
+    let storedCart = [];
+    if(shoppingCart){
+        const alreadyAdded = shoppingCart?.find((data) => data.id === cart.id)
+        if(alreadyAdded){
+            return alert('Already Added');
+        }
+        else{
+            let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
+            const remaining = [...shoppingCart, cart];
+            localStorage.setItem('job-cart', JSON.stringify(remaining))
+        }
+    }
+    else{
+        storedCart.push(cart);
+        localStorage.setItem("job-cart", JSON.stringify(storedCart))
+    }
+}
+
+
+const removeFromDb = (id) => {
+    const shoppingCart = getShoppingCart();
+    if(id in shoppingCart){
+        delete shoppingCart[id];
+        localStorage.setItem("job-cart", JSON.stringify(shoppingCart));
+    }
+}
+
+const getLocalStorage = () => {
+    const getData = JSON.parse(localStorage.getItem("job-cart"))
+    return getData;
+}
+
+const deleteShoppingCart = () => {
+    localStorage.removeItem("job-cart")
+}
+
+export { addToDb, removeFromDb, getLocalStorage, deleteShoppingCart };

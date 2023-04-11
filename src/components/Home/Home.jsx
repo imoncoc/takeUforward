@@ -4,8 +4,14 @@ import menImg  from '../../assets/allImg/men.png'
 import './Home.css'
 import JobCategory from '../JobCategory/JobCategory';
 import FeaturedJobs from '../FeaturedJobs/FeaturedJobs';
+import { toast } from 'react-hot-toast';
 
 const Home = () => {
+
+  const handleGetStarted = () => {
+    return toast.success("Comming soon 👏");
+  };
+
     return (
       <>
         <div className="container mb-5">
@@ -27,7 +33,12 @@ const Home = () => {
                   information you need. Its your future. Come find it. Manage
                   all your job application from start to finish.
                 </p>
-                <button className="dream-btn-primary">Get Started</button>
+                <button
+                  onClick={handleGetStarted}
+                  className="dream-btn-primary"
+                >
+                  Get Started
+                </button>
               </div>
             </div>
           </div>

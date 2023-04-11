@@ -4,9 +4,14 @@ import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import './Header.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { toast } from 'react-hot-toast';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleStartApply = () => {
+      return toast.success("Comming soon 👏");
+    }
 
     return (
       <div>
@@ -18,7 +23,7 @@ const Header = () => {
             <button
               className="navbar-toggler"
               type="button"
-              style={{zIndex: "10"}}
+              style={{ zIndex: "10" }}
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
@@ -82,7 +87,11 @@ const Header = () => {
                 </li>
               </ul>
 
-              <button className="dream-btn-primary" type="submit">
+              <button
+                onClick={handleStartApply}
+                className="dream-btn-primary"
+                type="submit"
+              >
                 Start Applying
               </button>
             </div>

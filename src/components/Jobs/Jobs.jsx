@@ -12,19 +12,19 @@ const Jobs = () => {
     setAllData(data);
   }, []);
 
-  console.log(data);
+
+  
 
   const handleChange = (item) => {
     if (data) {
       const storedCart = getLocalStorage();
-      const newArray = storedCart.filter((it) => it.jobStatus === item);
-      setData(newArray);
-    } else if (item === "All") {
-      setData(allData);
-    } else {
-      const storedCart = getLocalStorage();
-      const newArray = storedCart.filter((it) => it.jobStatus !== item);
-      setData(newArray);
+      if (item === "Onsite" || item === "Remote") {
+        const newArray = storedCart.filter((it) => it.jobStatus === item);
+        setData(newArray);
+      }
+      else{
+        setData(storedCart);
+      }
     }
   };
 
@@ -81,6 +81,7 @@ const Jobs = () => {
                 dataDetails={dataDetails}
               ></AppliedJobsDetails>
             ))}
+            <div className="mb-5"></div>
         </div>
       </div>
     </>

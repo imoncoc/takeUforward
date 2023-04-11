@@ -28,7 +28,7 @@ const FeaturedJobDetails = () => {
       contactEmail
     } = singleData;
 
-    console.log(singleData)
+
 
     return (
       <>

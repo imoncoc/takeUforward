@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const AppliedJobsDetails = ({dataDetails}) => {
     const {
+      id,
       companyLogo,
       companyName,
       jobTitle,
@@ -13,20 +14,24 @@ const AppliedJobsDetails = ({dataDetails}) => {
       employmentType,
       jobStatus
     } = dataDetails;
-    console.log(dataDetails)
+    // console.log(dataDetails)
     return (
       <>
         <div className="col-10 col-sm-12 mx-auto my-3">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-center details-container">
             {/* Section 1 */}
             <div className="d-flex flex-column flex-md-row">
-              <div className="details-img-container">
+              <div className="details-img-container d-flex justify-content-center align-items-center">
                 <img src={companyLogo} alt="" />
               </div>
-              <div className="ms-4 align-self-center">
-                <p className="details-title my-0">{jobTitle}</p>
-                <p className="details-description my-0">{companyName}</p>
-                <div className="my-2">
+              <div className="ms-4 align-self-center mt-3 mt-md-0">
+                <p className="details-title my-0 text-center text-md-start">
+                  {jobTitle}
+                </p>
+                <p className="details-description my-0 text-center text-md-start">
+                  {companyName}
+                </p>
+                <div className="my-2 text-center text-md-start">
                   <button className="take-btn-secondary me-3">
                     <span className="active">{employmentType}</span>
                   </button>
@@ -34,15 +39,15 @@ const AppliedJobsDetails = ({dataDetails}) => {
                     <span className="active">{jobStatus}</span>
                   </button>
                 </div>
-                <div className="d-flex text-muted">
-                  <p>
+                <div className=" d-md-flex text-muted">
+                  <p className="text-center text-md-start">
                     {" "}
                     <span>
                       <MapPinIcon className="details-icon" />
                     </span>{" "}
                     {address}
                   </p>
-                  <p className="ms-5">
+                  <p className="ms-md-5 text-center text-md-center">
                     <span>
                       <CurrencyDollarIcon className="details-icon" />
                     </span>
@@ -53,7 +58,7 @@ const AppliedJobsDetails = ({dataDetails}) => {
             </div>
             {/* Section 2 */}
             <div>
-              <Link to="/">
+              <Link to={`/detail/${id}`}>
                 <button className="dream-btn-primary">View Details</button>
               </Link>
             </div>

@@ -1,7 +1,7 @@
 import { toast } from "react-hot-toast";
 
 const addToDb = (cart)=>{
-    console.log(cart)
+    // console.log(cart)
     let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
     let storedCart = [];
     if(shoppingCart){

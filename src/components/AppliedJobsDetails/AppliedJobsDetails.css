@@ -1,0 +1,30 @@
+
+.details-container{
+    border: 1px solid #E8E8E8;
+        border-radius: 8px;
+        padding: 1.5rem;
+}
+.details-img-container{
+    background: #F4F4F4;
+        border-radius: 8px;
+        padding: 4rem;
+    
+}
+
+.details-title{
+    font-weight: 800;
+        font-size: 24px;
+        color: #474747;
+}
+
+.details-description{
+    font-weight: 800;
+        font-size: 20px;
+        color: #757575;
+}
+
+.details-icon{
+    color: #757575;
+    width: 1.2rem;
+    margin-right: 2px;
+}

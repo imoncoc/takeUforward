@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getLocalStorage } from '../../utilities/fakeDB';
+import AppliedJobsDetails from '../AppliedJobsDetails/AppliedJobsDetails';
 
 const Jobs = () => {
+    const [data, setData] = useState();
+    
+    useEffect(() => {
+      const storedCart = getLocalStorage();
+      setData(storedCart);
+    }, []);
+
+    console.log(data)
+
     return (
       <>
         <div className="container-fluid">
@@ -27,6 +38,18 @@ const Jobs = () => {
               />
             </div>
           </div>
+        </div>
+
+        <div className="container">
+            <div className="row">
+                <div className="col-10 col-sm-12 mx-auto text-end">
+                    <button>Filter</button>
+                </div>
+                {
+                    data &&
+                    data.map((dataDetails)=><AppliedJobsDetails key={dataDetails.id} dataDetails={dataDetails}></AppliedJobsDetails>)
+                }
+            </div>
         </div>
       </>
     );

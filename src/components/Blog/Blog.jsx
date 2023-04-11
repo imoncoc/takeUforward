@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const Blog = () => {
     return (
@@ -29,6 +30,7 @@ const Blog = () => {
 
         <div className="container">
           <div className="row">
+            
             <div className="col-10 col-sm-12 mx-auto my-5">
               <div className="accordion" id="accordionExample">
                 <div className="accordion-item">

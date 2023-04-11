@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigation } from 'react-router-dom';
 import {
   AreaChart,
   Area,
@@ -8,9 +9,16 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 
 const Statistics = () => {
+  const navigation = useNavigation();
+  if(navigation.state === 'loading'){
+    return <LoadingSpinner></LoadingSpinner>
+  }
+
+  
   const [data, setData] = useState();
 
   useEffect(()=>{

@@ -22,7 +22,12 @@ const AppliedJobsDetails = ({dataDetails}) => {
             {/* Section 1 */}
             <div className="d-flex flex-column flex-md-row">
               <div className="details-img-container d-flex justify-content-center align-items-center">
-                <img src={companyLogo} alt="" />
+                <img
+                  className="img-fluid"
+                  style={{ width: "5rem" }}
+                  src={companyLogo}
+                  alt=""
+                />
               </div>
               <div className="ms-4 align-self-center mt-3 mt-md-0">
                 <p className="details-title my-0 text-center text-md-start">
@@ -33,10 +38,10 @@ const AppliedJobsDetails = ({dataDetails}) => {
                 </p>
                 <div className="my-2 text-center text-md-start">
                   <button className="take-btn-secondary me-3">
-                    <span className="active">{employmentType}</span>
+                    <span className="active">{jobStatus}</span>
                   </button>
                   <button className="take-btn-secondary">
-                    <span className="active">{jobStatus}</span>
+                    <span className="active">{employmentType}</span>
                   </button>
                 </div>
                 <div className=" d-md-flex text-muted">

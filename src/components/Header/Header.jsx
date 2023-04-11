@@ -13,11 +13,12 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container py-3">
             <Link to="/" className="navbar-brand dream-nav-logo d-flex">
-              Take <span className='active'>U</span> forward
+              Take <span className="active">U</span> forward
             </Link>
             <button
               className="navbar-toggler"
               type="button"
+              style={{zIndex: "10"}}
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"

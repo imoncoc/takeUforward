@@ -3,6 +3,22 @@ import './Footer.css'
 
 
 const Footer = () => {
+var dateObj = new Date();
+var month = dateObj.getUTCMonth() + 1; //months from 1-12
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+
+ const newDate = year + "/" + month + "/" + day;
+ console.log(newDate)
+
+ console.log(
+   new Date().toLocaleString("en-us", {
+     month: "short",
+     day: "2-digit",
+     year: "numeric"
+   })
+ );
+
     return (
       <div className="footer-container">
         <div className="container">
@@ -65,7 +81,13 @@ const Footer = () => {
 
           <div className="col-10 col-md-6 mx-auto  footer-description w-100  d-md-flex justify-content-md-between py-5">
             <p className="text-center">
-              @{new Date().getFullYear()} Take<span className="active">U</span>
+              @
+              {new Date().toLocaleString("en-us", {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+              })}{" "}
+              Take<span className="active">U</span>
               forward. All Rights Reserved to{" "}
               <span className="active">Md Imon Hossain.</span>
             </p>

@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { getLocalStorage } from "../../utilities/fakeDB";
 import AppliedJobsDetails from "../AppliedJobsDetails/AppliedJobsDetails";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const Jobs = () => {
-  const [data, setData] = useState();
-  const [allData, setAllData] = useState();
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
+
+
+  const [data, setData] = useState([]);
+  const [nodataFound, setNoDataFound] = useState(false);
 
   useEffect(() => {
     const storedCart = getLocalStorage();
     setData(storedCart);
-    setAllData(data);
   }, []);
 
 
@@ -25,6 +33,9 @@ const Jobs = () => {
       else{
         setData(storedCart);
       }
+    }
+    else{
+      noData();
     }
   };
 
@@ -61,7 +72,6 @@ const Jobs = () => {
             <div className="" style={{ width: "10rem" }}>
               <select
                 onChange={(e) => {
-                  console.log("e.target.value", e.target.value);
                   handleChange(e.target.value);
                 }}
                 className="form-select form-select-lg mb-3"

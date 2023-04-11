@@ -53,51 +53,35 @@ const Statistics = () => {
 const data = [
   {
     name: "Assignment 1",
-    uv: 60,
     result: 60,
-    amt: 2400,
   },
   {
     name: "Assignment 2",
-    uv: 60,
     result: 60,
-    amt: 2210,
   },
   {
     name: "Assignment 3",
-    uv: 60,
     result: 60,
-    amt: 2290,
   },
   {
     name: "Assignment 4",
-    uv: 60,
     result: 58,
-    amt: 2000,
   },
   {
     name: "Assignment 5",
-    uv: 60,
     result: 58,
-    amt: 2181,
   },
   {
     name: "Assignment 6",
-    uv: 60,
     result: 60,
-    amt: 2500,
   },
   {
     name: "Assignment 7",
-    uv: 60,
     result: 60,
-    amt: 2100,
   },
   {
     name: "Assignment 8",
-    uv: 60,
     result: 60,
-    amt: 2100,
   },
 ];
 

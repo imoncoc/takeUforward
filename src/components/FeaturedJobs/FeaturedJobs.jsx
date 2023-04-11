@@ -7,12 +7,12 @@ const FeaturedJobs = () => {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch("jobs.json")
+    fetch("https://raw.githubusercontent.com/imoncoc/fake-data/main/jobs.json")
       .then((res) => res.json())
       .then((data) => {
         setFeaturedJobs(data);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }, []);
 
 

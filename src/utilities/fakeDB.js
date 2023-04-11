@@ -1,3 +1,4 @@
+import { toast } from "react-hot-toast";
 
 const addToDb = (cart)=>{
     console.log(cart)
@@ -6,7 +7,7 @@ const addToDb = (cart)=>{
     if(shoppingCart){
         const alreadyAdded = shoppingCart?.find((data) => data.id === cart.id)
         if(alreadyAdded){
-            return alert('Already Added');
+            return toast.error('Already Added');
         }
         else{
             let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
@@ -18,6 +19,7 @@ const addToDb = (cart)=>{
         storedCart.push(cart);
         localStorage.setItem("job-cart", JSON.stringify(storedCart))
     }
+    toast.success("Successfully Added");
 }
 
 

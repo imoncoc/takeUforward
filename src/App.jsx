@@ -8,6 +8,7 @@ import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer/Footer'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Toaster } from "react-hot-toast";
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
 
   return (
     <div className="App">
+      <Toaster />
       <Header></Header>
-      <div className=''>
+      <div className="">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>

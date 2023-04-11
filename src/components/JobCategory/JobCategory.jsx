@@ -7,9 +7,12 @@ const JobCategory = () => {
     const [jobsCategory, setJobsCategory] = useState()
 
     useEffect(()=>{
-      fetch("category.json")
-      .then(res => res.json())
-      .then((data) => setJobsCategory(data))
+      fetch(
+        "https://raw.githubusercontent.com/imoncoc/fake-data/main/category.json"
+      )
+        .then((res) => res.json())
+        .then((data) => setJobsCategory(data))
+        .catch((error) => console.log(error))
     }, [])
 
 

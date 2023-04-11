@@ -17,9 +17,9 @@ const AppliedJobsDetails = ({dataDetails}) => {
     return (
       <>
         <div className="col-10 col-sm-12 mx-auto my-3">
-          <div className="d-flex justify-content-between align-items-center details-container">
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-center details-container">
             {/* Section 1 */}
-            <div className="d-flex">
+            <div className="d-flex flex-column flex-md-row">
               <div className="details-img-container">
                 <img src={companyLogo} alt="" />
               </div>
@@ -53,7 +53,7 @@ const AppliedJobsDetails = ({dataDetails}) => {
             </div>
             {/* Section 2 */}
             <div>
-              <Link to='/'>
+              <Link to="/">
                 <button className="dream-btn-primary">View Details</button>
               </Link>
             </div>

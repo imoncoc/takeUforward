@@ -1,44 +1,65 @@
 import React, { useEffect, useState } from "react";
-import { getLocalStorage } from "../../utilities/fakeDB";
 import AppliedJobsDetails from "../AppliedJobsDetails/AppliedJobsDetails";
-import { useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { toast } from "react-hot-toast";
+import { getShoppingCart } from "../../utilities/fakeDB";
+import jobsLoader from "../../loaders/jobsLoader";
 
 const Jobs = () => {
-  const navigation = useNavigation();
-  if (navigation.state === "loading") {
-    return <LoadingSpinner></LoadingSpinner>;
-  }
+  // const navigation = useNavigation();
+  // if (navigation.state === "loading") {
+  //   return <LoadingSpinner></LoadingSpinner>;
+  // }
 
 
 
-  const [data, setData] = useState([]);
-  const [nodataFound, setNoDataFound] = useState(false);
+  // const [data, setData] = useState([]);
+  // const [nodataFound, setNoDataFound] = useState(false);
 
-  useEffect(() => {
-    const storedCart = getLocalStorage();
-    setData(storedCart);
-  }, []);
+  // useEffect(() => {
+  //   const storedCart = jobsLoader();
+  //   setData(storedCart);
+  // }, []);
+
+  // console.log(data)
 
 
   
 
-  const handleChange = (item) => {
-    if (data) {
-      const storedCart = getLocalStorage();
-      if (item === "Onsite" || item === "Remote") {
-        const newArray = storedCart.filter((it) => it.jobStatus === item);
-        setData(newArray);
-      }
-      else{
-        setData(storedCart);
-      }
-    }
-    else{
-      toast.error("No data Found!");
-    }
-  };
+  // const handleChange = (item) => {
+  //   console.log(item)
+  //   if (data) {
+  //     const storedCart = useLoaderData();
+  //     // console.log(storedCart)
+  //     if (item === "Onsite" || item === "Remote") {
+  //       const newArray = storedCart.filter((it) => it.jobStatus === item);
+  //       setData(newArray);
+  //     }
+  //     else{
+  //       setData(storedCart);
+  //     }
+  //   }
+  //   else{
+  //     toast.error("No data Found!");
+  //   }
+  // };
+
+   const savedAppliedJobs = useLoaderData();
+   const [data, setData] = useState(savedAppliedJobs);
+
+   console.log(data);
+
+   const handleFilter = (e) => {
+     const filerValue = e.target.value;
+     if (filerValue) {
+       const filterData = savedAppliedJobs.filter(
+         (singleData) => singleData.jobStatus === filerValue
+       );
+
+       setData(filterData);
+     }
+   };
 
   return (
     <>
@@ -72,16 +93,13 @@ const Jobs = () => {
             <div></div>
             <div className="" style={{ width: "10rem" }}>
               <select
-                onChange={(e) => {
-                  handleChange(e.target.value);
-                }}
+                onChange={handleFilter}
                 className="form-select form-select-lg mb-3"
                 aria-label=".form-select-lg example"
               >
-                <option defaultValue>Filter By</option>
+                <option  value="">Filter By</option>
                 <option value="Onsite">Onsite</option>
                 <option value="Remote">Remote</option>
-                <option value="All">Show All</option>
               </select>
             </div>
           </div>
@@ -92,7 +110,7 @@ const Jobs = () => {
                 dataDetails={dataDetails}
               ></AppliedJobsDetails>
             ))}
-            <div className="mb-5"></div>
+          <div className="mb-5"></div>
         </div>
       </div>
     </>

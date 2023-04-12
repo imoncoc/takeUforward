@@ -1,43 +1,39 @@
 import { toast } from "react-hot-toast";
 
-const addToDb = (cart)=>{
-    // console.log(cart)
-    let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
-    let storedCart = [];
-    if(shoppingCart){
-        const alreadyAdded = shoppingCart?.find((data) => data.id === cart.id)
-        if(alreadyAdded){
-            return toast.error('Already Added');
-        }
-        else{
-            let shoppingCart = JSON.parse(localStorage.getItem('job-cart'));
-            const remaining = [...shoppingCart, cart];
-            localStorage.setItem('job-cart', JSON.stringify(remaining))
-        }
-    }
-    else{
-        storedCart.push(cart);
-        localStorage.setItem("job-cart", JSON.stringify(storedCart))
-    }
+const addToDb = (id) => {
+  let shoppingCart = getShoppingCart();
+  // add quantity
+  const quantity = shoppingCart[id];
+  if (!quantity) {
+    shoppingCart[id] = 1;
+    localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
     toast.success("Successfully Added");
-}
-
+  } else {
+    toast.error("Already Added");
+  }
+};
 
 const removeFromDb = (id) => {
     const shoppingCart = getShoppingCart();
     if(id in shoppingCart){
         delete shoppingCart[id];
-        localStorage.setItem("job-cart", JSON.stringify(shoppingCart));
+        localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
     }
 }
 
-const getLocalStorage = () => {
-    const getData = JSON.parse(localStorage.getItem("job-cart"))
-    return getData;
-}
+const getShoppingCart = () => {
+  let shoppingCart = {};
+
+  //get the shopping cart from local storage
+  const storedCart = localStorage.getItem("shopping-cart");
+  if (storedCart) {
+    shoppingCart = JSON.parse(storedCart);
+  }
+  return shoppingCart;
+};
 
 const deleteShoppingCart = () => {
-    localStorage.removeItem("job-cart")
+    localStorage.removeItem("shopping-cart");
 }
 
-export { addToDb, removeFromDb, getLocalStorage, deleteShoppingCart };
+export { addToDb, removeFromDb, getShoppingCart, deleteShoppingCart };

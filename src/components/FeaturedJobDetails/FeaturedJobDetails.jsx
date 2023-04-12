@@ -143,7 +143,7 @@ const FeaturedJobDetails = () => {
               </div>
 
               <button
-                onClick={() => addToDb(singleData)}
+                onClick={() => addToDb(id)}
                 className="dream-btn-primary w-100 my-3"
               >
                 Apply Now

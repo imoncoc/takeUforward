@@ -3,6 +3,7 @@ import { getLocalStorage } from "../../utilities/fakeDB";
 import AppliedJobsDetails from "../AppliedJobsDetails/AppliedJobsDetails";
 import { useNavigation } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import { toast } from "react-hot-toast";
 
 const Jobs = () => {
   const navigation = useNavigation();
@@ -35,7 +36,7 @@ const Jobs = () => {
       }
     }
     else{
-      noData();
+      toast.error("No data Found!");
     }
   };
 

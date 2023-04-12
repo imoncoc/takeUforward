@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
 import FeaturedJobSingleData from '../FeaturedJobSingleData/FeaturedJobSingleData';
+import { useNavigation } from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const FeaturedJobs = () => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
+
   const [featuredJobs, setFeaturedJobs ] = useState([]);
   const [showAll, setShowAll] = useState(false);
 

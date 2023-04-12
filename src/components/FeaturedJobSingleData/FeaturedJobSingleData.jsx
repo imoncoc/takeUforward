@@ -1,9 +1,16 @@
 import React from 'react';
 import './FeaturedJobSingleData.css'
 import { MapPinIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const FeaturedJobSingleData = ({feature}) => {
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
+
     const {address, companyLogo, companyName, contactNumber, description, educationalRequirements, employmentType
 , gmail, id, jobRequirements, jobStatus, jobTitle, responsibility, salary} = feature;
 

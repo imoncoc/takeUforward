@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import './FeaturedJobDetails.css'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import vector1 from '../../assets/allImg/Vector-1.png' 
 import vector2 from '../../assets/allImg/Vector.png' 
 import { MapPinIcon, CurrencyDollarIcon, BriefcaseIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { addToDb } from '../../utilities/fakeDB';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const FeaturedJobDetails = () => {
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
+
+
     const singleData = useLoaderData();
     
     const {

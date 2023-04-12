@@ -3,21 +3,9 @@ import './Footer.css'
 
 
 const Footer = () => {
-var dateObj = new Date();
-var month = dateObj.getUTCMonth() + 1; //months from 1-12
-var day = dateObj.getUTCDate();
-var year = dateObj.getUTCFullYear();
 
- const newDate = year + "/" + month + "/" + day;
- console.log(newDate)
 
- console.log(
-   new Date().toLocaleString("en-us", {
-     month: "short",
-     day: "2-digit",
-     year: "numeric"
-   })
- );
+
 
     return (
       <div className="footer-container">
